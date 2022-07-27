@@ -2766,7 +2766,7 @@ li.uk-disabled > a:after {
 }
 
 .uk-list {
-    padding: 0;
+    padding: 6;
     list-style: none
 }
 
