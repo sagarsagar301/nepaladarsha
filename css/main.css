@@ -1,0 +1,370 @@
+body {
+    font-family: 'Oswald', sans-serif;
+    margin: 1em 20%;
+    background-color: #fafafa;
+}
+
+/* Modal */
+/* [Object] Modal
+ * =============================== */
+.modal {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: left;
+    background: rgba(0,0,0, .9);
+    transition: opacity .25s ease;
+}
+
+.modal__bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+.modal-state {
+    display: none;
+}
+
+.modal-state:checked + .modal {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-state:checked + .modal .modal__inner {
+    top: 0;
+}
+
+.modal__inner {
+    transition: top .25s ease;
+    position: absolute;
+    top: -20%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 98%;
+    margin: auto;
+    overflow: auto;
+    background: #88dae55c;
+    border-radius: 5px;
+    padding: 1em 2em;
+    height: 85%;
+}
+
+.modal__close {
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    width: 1.1em;
+    height: 1.1em;
+    cursor: pointer;
+}
+
+.modal__close:after,
+.modal__close:before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 1.5em;
+    background: #ccc;
+    display: block;
+    transform: rotate(45deg);
+    left: 50%;
+    margin: -3px 0 0 -1px;
+    top: 0;
+}
+
+.modal__close:hover:after,
+.modal__close:hover:before {
+    background: #aaa;
+}
+
+.modal__close:before {
+    transform: rotate(-45deg);
+}
+
+@media screen and (max-width: 768px) {
+
+    .modal__inner {
+        width: 90%;
+        height: 90%;
+        box-sizing: border-box;
+    }
+}
+
+.btn {
+    cursor: pointer;
+    background: #27ae60;
+    display: inline-block;
+    padding: .5em 1em;
+    color: #fff;
+    border-radius: 3px;
+}
+
+.btn:hover,
+.btn:focus {
+    background: #2ecc71;
+}
+
+.btn:active {
+    background: #27ae60;
+    box-shadow: 0 1px 2px rgba(0,0,0, .2) inset;
+}
+
+.btn--blue {
+    background: #2980b9;
+}
+
+.btn--blue:hover,
+.btn--blue:focus {
+    background: #3498db;
+}
+
+.btn--blue:active {
+    background: #2980b9;
+}
+
+p img {
+    max-width: 200px;
+    height: auto;
+    float: left;
+    margin: 0 1em 1em 0;
+}
+/*Modal*/
+
+/*Button*/
+
+label.btn-0 {
+    text-decoration: none;
+    line-height: 40px;
+    color: black;
+    cursor: pointer;
+}
+
+label.btn-0:hover {
+    color: #020117;
+}
+
+.centerer {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+[class^="btn-"] {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    font-weight: inherit;
+    /*width: 100%;*/
+    height: 40px;
+    /*max-width: 550px;*/
+    /*margin: 1rem auto;*/
+    /*text-transform: uppercase;*/
+    /*border-bottom: 1px solid currentColor;*/
+}
+
+.btn-0 {
+    font-family: 'Oswald', Helvetica, arial, sans-serif;
+    color: #c2be7e;
+}
+
+.modal h3 {
+    font-family: 'Oswald', Helvetica, arial, sans-serif;
+}
+
+/* Navigation Bar*/
+/* colors */
+/* variables */
+/* mixins */
+/* resets and base styles */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+*:focus {
+    outline: none;
+}
+
+html {
+    background: #5634d1;
+    color: white;
+    font: normal 10px/1.42857 "Source Sans Pro", Helvetica, Arial, sans-serif;
+}
+
+body {
+    background: none;
+    color: inherit;
+    font: inherit;
+}
+
+a {
+    color: inherit;
+    cursor: pointer;
+    text-decoration: none;
+}
+a:hover {
+    opacity: 0.8;
+}
+
+/* nav toggle */
+.nav-toggle {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    height: 2rem;
+    left: 2rem;
+    position: fixed;
+    top: 2rem;
+    width: 3.6rem;
+    z-index: 99;
+    display: none;
+}
+.nav-toggle:hover {
+    opacity: 0.8;
+}
+.nav-toggle .nav-toggle-bar,
+.nav-toggle .nav-toggle-bar::after,
+.nav-toggle .nav-toggle-bar::before {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    background: white;
+    content: '';
+    height: 0.4rem;
+    width: 100%;
+}
+.nav-toggle .nav-toggle-bar {
+    margin-top: 0;
+}
+.nav-toggle .nav-toggle-bar::after {
+    margin-top: 0.8rem;
+}
+.nav-toggle .nav-toggle-bar::before {
+    margin-top: -0.8rem;
+}
+.nav-toggle.expanded .nav-toggle-bar {
+    background: transparent;
+}
+.nav-toggle.expanded .nav-toggle-bar::after, .nav-toggle.expanded .nav-toggle-bar::before {
+    background: white;
+    margin-top: 0;
+}
+.nav-toggle.expanded .nav-toggle-bar::after {
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.nav-toggle.expanded .nav-toggle-bar::before {
+    -ms-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+/* nav */
+.nav {
+    -webkit-transition: left 0.5s ease;
+    -moz-transition: left 0.5s ease;
+    -ms-transition: left 0.5s ease;
+    -o-transition: left 0.5s ease;
+    transition: left 0.5s ease;
+    background: #28dde0;
+    color: white;
+    cursor: pointer;
+    font-size: 2rem;
+    height: 100vh;
+    left: -20rem;
+    padding: 6rem 2rem 2rem 2rem;
+    position: fixed;
+    top: 0;
+    width: 20rem;
+    z-index: 1;
+}
+.nav.expanded {
+    left: 0;
+}
+.nav ul {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#tab-programmes span {
+    font-family: 'Oswald', sans-serif;
+    margin: 0;
+    font-size: 15px;
+    font-weight: 300;
+    text-align: center;
+}
+
+/*.onclick-menu {*/
+/*position: relative;*/
+/*display: inline-block;*/
+/*}*/
+.onclick-menu:before {
+    content: "click me!";
+}
+/*.onclick-menu:focus {*/
+/*!* clicking on label should toggle the menu *!*/
+/*pointer-events: none;*/
+/*}*/
+.onclick-menu:focus .onclick-menu-content {
+    /*  opacity is 1 in opened state (see below) */
+    opacity: 1;
+    visibility: visible;
+
+    /* don't let pointer-events affect descendant elements */
+    pointer-events: auto;
+}
+.onclick-menu-content {
+    position: absolute;
+    z-index: 1;
+
+    /* use opacity to fake immediate toggle */
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility 0.5s;
+}
+
+/*.header:focus .menu {*/
+/*!*  opacity is 1 in opened state (see below) *!*/
+/*opacity: 1;*/
+/*visibility: visible;*/
+
+/*!* don't let pointer-events affect descendant elements *!*/
+/*pointer-events: auto;*/
+/*}*/
+/*.menu {*/
+/*!*position: absolute;*!*/
+/*z-index: 1;*/
+
+/*!* use opacity to fake immediate toggle *!*/
+/*opacity: 0;*/
+/*visibility: hidden;*/
+/*transition: visibility 0.5s;*/
+/*}*/
+
